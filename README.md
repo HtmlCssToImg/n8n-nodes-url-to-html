@@ -1,48 +1,96 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# n8n-nodes-url-to-html
 
-# n8n-nodes-starter
+This is an n8n community node. It lets you use **PDFMunk** in your n8n workflows.
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](https://n8n.io). It includes the node linter and other dependencies.
+PDFMunk is a powerful API service that converts URLs to clean HTML content or even converts URL to PDF or HTML to PDF, perfect for web scraping, content extraction, and data processing workflows.
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+**n8n** is a **fair-code licensed** workflow automation platform.
 
-If you would like your node to be available on n8n cloud you can also [submit your node for verification](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/).
+## Installation
 
-## Prerequisites
+Follow the **installation guide** in the n8n community nodes documentation.
 
-You need the following installed on your development machine:
+1. **Go to Settings > Community Nodes.**
+2. **Select Install.**
+3. **Enter** `n8n-nodes-url-to-html` **in Enter npm package name**.
+4. **Agree to the risks of using community nodes: select I understand the risks of installing unverified code from a public source.**
+5. **Select Install.**
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 20. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-  ```
-  npm install n8n -g
-  ```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes** panel.
 
-## Using this starter
+## Operations
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+It supports these operations:
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-   ```
-   git clone https://github.com/<your organization>/<your-repo-name>.git
-   ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+* Convert any URL to clean HTML content
+* Extract web page content for data processing
+* Scrape website content for analysis
+* Generate HTML from dynamic web pages
+* Process multiple URLs in batch workflows
 
-## More information
+## Credentials
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+Create a PDFMunk account **here**: http://pdfmunk.com to get your API key.
 
-## License
+* Generate your API key at: http://pdfmunk.com
+* Configure the PDFMunk API credential in n8n with your API key
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+## Compatibility
+
+Tested against n8n version 0.225+.
+
+## Usage
+
+A typical workflow using this node would look like this:
+
+```
+Webhook → URL to HTML → HTML Extract → Database
+```
+
+**Example workflow for content extraction:**
+1. **HTTP Request** - Get list of URLs to process
+2. **URL to HTML** - Convert each URL to HTML content  
+3. **HTML Extract** - Parse specific data from HTML
+4. **Set** - Format the extracted data
+5. **Database** - Store the processed content
+
+**Input Parameters:**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| **URL** | String | Yes | The URL to convert to HTML |
+| **Credentials** | PDFMunk API | Yes | Your PDFMunk API credentials |
+
+**Output:**
+
+The node returns clean HTML content that can be processed by other n8n nodes for data extraction, content analysis, or storage.
+
+## Troubleshooting
+
+**Common Issues:**
+
+* **Authentication Error** - Verify your API key is correct and your PDFMunk account is active
+* **URL Not Accessible** - Ensure the URL is publicly accessible and properly formatted
+* **Rate Limiting** - Check your PDFMunk plan limits for high-volume workflows
+
+## Resources
+
+* **n8n community nodes documentation**
+* **PDFMunk API Documentation**: https://pdfmunk.com/api-docs
+* **PDFMunk Website**: http://pdfmunk.com
+* **PDFMunk Support**: support@pdfmunk.com
+
+## Version History
+
+### v1.0.0
+- Initial release
+- Basic URL to HTML conversion functionality
+- PDFMunk API integration
+
+---
+
+**Keywords**
+* **n8n-community-node-package**
+* **web-scraping**
+* **html-conversion**
+* **url-processing**

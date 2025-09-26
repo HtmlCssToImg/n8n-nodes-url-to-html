@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-url-to-html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "n8n node for converting URLs to HTML using pdfmunk API",
   "keywords": [
     "n8n-community-node-package",
