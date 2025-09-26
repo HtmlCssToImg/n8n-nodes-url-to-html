@@ -1,19 +1,23 @@
 {
-  "name": "n8n-nodes-<...>",
-  "version": "0.1.0",
-  "description": "",
+  "name": "n8n-nodes-url-to-html",
+  "version": "1.0.0",
+  "description": "n8n node for converting URLs to HTML using pdfmunk API",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "html",
+    "url-to-html",
+    "web-scraping",
+    "urltohtml"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://pdfmunk.com/",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "UrlToHtml",
+    "email": "support@pdfmunk.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/HtmlCssToImg/n8n-nodes-url-to-html.git"
   },
   "engines": {
     "node": ">=20.15"
@@ -33,12 +37,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/UrlToHtmlApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/UrlToHtml/UrlToHtml.node.js"
     ]
   },
   "devDependencies": {

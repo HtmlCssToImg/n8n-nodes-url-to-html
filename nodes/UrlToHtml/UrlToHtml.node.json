@@ -1,0 +1,19 @@
+{
+	"node": "dist/nodes/UrlToHtml/UrlToHtml.node.js",
+	"nodeTypes": {
+		"UrlToHtml": {
+			"sourcePath": "dist/nodes/UrlToHtml/UrlToHtml.node.js",
+			"type": "n8n-nodes-base.urlToHtml"
+		}
+	},
+	"credentialDocumentation": [
+		{
+			"url": "https://pdfmunk.com/"
+		}
+	],
+	"primaryDocumentation": [
+		{
+			"url": "https://pdfmunk.com/"
+		}
+	]
+}
