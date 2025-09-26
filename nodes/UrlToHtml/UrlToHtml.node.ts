@@ -16,7 +16,7 @@ export class UrlToHtml implements INodeType {
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["url"]}}',
 		description: 'Extract HTML content from URLs/websites',
 		defaults: {
-			name: 'URL to HTML',
+			name: 'URL To HTML',
 		},
 		inputs: ['main'],
 		outputs: ['main'],
@@ -65,7 +65,7 @@ export class UrlToHtml implements INodeType {
 				description: 'When to consider the page loaded',
 			},
 			{
-				displayName: 'Timeout (ms)',
+				displayName: 'Timeout(ms)',
 				name: 'timeout',
 				type: 'number',
 				default: 30000,
@@ -86,7 +86,7 @@ export class UrlToHtml implements INodeType {
 				description: 'Height of the browser viewport in pixels',
 			},
 			{
-				displayName: 'Wait for Timeout (ms)',
+				displayName: 'Wait For Timeout(ms)',
 				name: 'wait_for_timeout',
 				type: 'number',
 				default: 2000,
@@ -126,12 +126,12 @@ export class UrlToHtml implements INodeType {
 					user_agent,
 				};
 
-				const response = await this.helpers.requestWithAuthentication.call(
+				const response = await this.helpers.httpRequestWithAuthentication.call(
 					this,
-					'htmlCssToImgApi',
+					'urlToHtmlApi',
 					{
 						method: 'POST',
-						url: '/url-to-html',
+						url: 'https://pdfmunk.com/api/v1/url-to-html',
 						body,
 						json: true,
 					},
